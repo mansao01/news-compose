@@ -1,11 +1,14 @@
 package com.mansao.newsportal.data.remote
 
-import com.mansao.newsportal.BuildConfig
+import com.mansao.newsportal.data.remote.response.NewsResponse
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 
 interface ApiService {
-
-    companion object {
-        private const val API_KEY = BuildConfig.API_KEY
-    }
+    @GET("v2/top-headlines")
+    suspend fun getHeadlineNews(
+        @Query("country")
+        country: String = "id"
+    ): NewsResponse
 }
