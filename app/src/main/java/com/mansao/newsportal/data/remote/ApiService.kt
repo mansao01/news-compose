@@ -9,6 +9,6 @@ interface ApiService {
     @GET("v2/top-headlines")
     suspend fun getHeadlineNews(
         @Query("country")
-        country: String = "id"
+        country: String = "us"
     ): NewsResponse
 }

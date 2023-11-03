@@ -1,8 +1,11 @@
 package com.mansao.newsportal.ui.screen.home
 
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import com.mansao.newsportal.data.remote.response.ArticlesItem
 import com.mansao.newsportal.ui.common.HomeUiState
+import com.mansao.newsportal.ui.component.NewsItemList
 
 @Composable
 fun HomeScreen(
@@ -19,5 +22,9 @@ fun HomeScreen(
 fun HomeContent(
     news: List<ArticlesItem>
 ) {
-    println(news[3])
+    LazyColumn {
+        items(news) { data ->
+            NewsItemList(news = data)
+        }
+    }
 }
