@@ -1,4 +1,4 @@
-package com.mansao.newsportal
+package com.mansao.newsportal.util
 
 import java.text.DateFormat
 import java.text.ParseException
