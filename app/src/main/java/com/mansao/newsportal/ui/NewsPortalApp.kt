@@ -31,7 +31,12 @@ fun NewsPortalApp(
         }
 
         composable(Screen.Detail.route) {
-            DetailScreen(sharedViewModel = sharedViewModel)
+            DetailScreen(
+                sharedViewModel = sharedViewModel,
+                navigateToHome = {
+                    navController.popBackStack()
+                    navController.navigate(Screen.Home.route)
+                })
         }
     }
 }
